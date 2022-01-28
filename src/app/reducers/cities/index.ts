@@ -1,7 +1,17 @@
-import { Action } from '../../actions';
+// import { Action } from '../../actions';
 
-export default (state = null, action: Action) => {
-  switch (action) {
+interface IWheather {
+  name?: string,
+  temperature?: number,
+  time?: Date
+}
+
+const initState: Array<IWheather> = [];
+
+export default (state = initState, action: any) => {
+  switch (action.type) {
+    case 'GET_WEATHER':
+      return [...state, action.payload];
     default:
       return state;
   }
