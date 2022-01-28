@@ -1,10 +1,13 @@
 import React from 'react';
+import CityComponent from './cityComponent';
 
-// Root layout component
-function Layout() {
+export default () => {
+  const cities = ['Belgrade', 'Moscow', 'Seattle', 'Prague', 'London'];
+
   return (
-    <span>TODO</span>
+    <span>
+      {cities.map((city) => <CityComponent key={Math.random()} city={city} />)}
+    </span>
   );
-}
+};
 
-export default Layout;
